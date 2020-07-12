@@ -7,6 +7,7 @@ public class MenuPrincipalTexto {
 	private static final int OP_PESSOAS = 1;
 	private static final int OP_DEPTOS = 2;
 	private static final int OP_PRODUTOS = 3;
+	private static final int OP_COLAB = 4;
 	
 	private static final int OP_ADICIONAR = 1;
 	private static final int OP_LISTAR = 2;
@@ -14,7 +15,7 @@ public class MenuPrincipalTexto {
 	private static final int OP_EXCLUIR = 4;
 	
 	// conjunto de estados possiveis no sistema
-	private enum Estado {PRINCIPAL, PESSOAS, DEPTOS, PRODUTOS};
+	private enum Estado {PRINCIPAL, PESSOAS, DEPTOS, PRODUTOS, COLAB};
 	
 	private Estado estadoAtual; // armazena o estado atual do menu
 	private Scanner entrada;
@@ -28,6 +29,7 @@ public class MenuPrincipalTexto {
 		System.out.println("1 - Administração de Pessoas");
 		System.out.println("2 - Administração de Departamentos");
 		System.out.println("3 - Administração de Produtos");
+		System.out.println("4 - Administração de Colaboradores");
 	}
 	
 	private void imprimeMenuSecundário(String tipoMenu) {
@@ -60,6 +62,9 @@ public class MenuPrincipalTexto {
 			case PRODUTOS:
 				imprimeMenuSecundário("Produtos");
 				break;
+			case COLAB:
+				imprimeMenuSecundário("Colaboradores");
+				break;
 
 			default:
 				imprimeMenuPrincipal();
@@ -89,13 +94,18 @@ public class MenuPrincipalTexto {
 				case OP_PRODUTOS:
 					estadoAtual = Estado.PRODUTOS;
 					break;
+				case OP_COLAB:
+					estadoAtual = Estado.COLAB;
+					break;
 				
 		
                 if (estadoAtual == Estado.PESSOAS) {
                     menuEspecificoTexto = new MenuPessoaTexto();
-                }if (estadoAtual == Estado.SETOR) {
+                }if (estadoAtual == Estado.DEPTOS) {
                     menuEspecificoTexto = new MenuSetorTexto(); 
                 } if (estadoAtual == Estado.PRODUTOS) {
+                    menuEspecificoTexto = new MenuProdutoTexto();
+		} if (estadoAtual == Estado.COLAB) {
                     menuEspecificoTexto = new MenuProdutoTexto();
           
                  
