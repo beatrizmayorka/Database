@@ -110,7 +110,7 @@ public class ColaboradorDao implements IDao<Colaborador> {
 	        rs = stmt.getGeneratedKeys();
 	        
 	        if (rs.next()) {
-	        	fornecedor.setId(rs.getInt(1));
+	        	colaborador.setId(rs.getInt(1));
 	        }
 			
 		} catch (SQLException e) {
