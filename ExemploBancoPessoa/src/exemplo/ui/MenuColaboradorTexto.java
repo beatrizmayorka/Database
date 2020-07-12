@@ -24,7 +24,7 @@ public class MenuColaboradorTexto extends MenuEspecificoTexto{
     private Colaborador obterDadosColaborador(Colaborador colaborador) {
         Colaborador c;
 
-        if (fornecedor == null) {
+        if (colaborador == null) {
             c = new Colaborador(0, null, null);
         } else {
             c = colaborador;
@@ -37,9 +37,9 @@ public class MenuColaboradorTexto extends MenuEspecificoTexto{
         String pedidos = entrada.nextLine();
         entrada.nextLine();
 
-        f.setNome(nome);
+        c.setNome(nome);
 
-        return f;
+        return c;
     }
 
     public void adicionar() {
