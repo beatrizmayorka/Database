@@ -47,6 +47,12 @@ public class Pessoa {
 		return "Pessoa [id=" + id + ", nome=" + nome + ", idade=" + idade + "]";
 	}
 	
-	
-	
+	public Departamento getDepartamento() {
+		return departamento;
+	}
+
+	public void setDepartamento(Departamento departamento) {
+		this.departamento = departamento;
+	}
+		
 }
