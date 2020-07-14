@@ -42,9 +42,8 @@ public class Pessoa {
 		idade++;
 	}
 	
-	@Override
 	public String toString() {
-		return "Pessoa [id=" + id + ", nome=" + nome + ", idade=" + idade + "]";
+		return "Pessoa [id = " + id + ", nome = " + nome + ", idade = " + idade + "]";
 	}
 	
 	public Departamento getDepartamento() {
