@@ -44,7 +44,10 @@ public class MenuProdutoTexto extends MenuEspecificoTexto {
     }
 
     public void adicionar() {
-        System.out.println("Adicionar Produto");
+    	System.out.println();
+    	System.out.println(" ===================== ");
+        System.out.println(" | Adicionar Produto | ");
+        System.out.println(" ===================== ");
         System.out.println();
         
         // obter dados do produto
@@ -55,7 +58,10 @@ public class MenuProdutoTexto extends MenuEspecificoTexto {
     }
 
     public void editar() {
-        System.out.println("Editar Produto");
+    	System.out.println();
+    	System.out.println(" ================== ");
+        System.out.println(" | Editar Produto | ");
+        System.out.println(" ================== ");
         System.out.println();
         
         // listar os produtos
@@ -75,7 +81,10 @@ public class MenuProdutoTexto extends MenuEspecificoTexto {
     }
 
     public void excluir() {
-        System.out.println("Excluir Produto");
+    	System.out.println();
+    	System.out.println(" =================== ");
+        System.out.println(" | Excluir Produto | ");
+        System.out.println(" =================== ");
         System.out.println();
         
         // listar os produtos
@@ -89,7 +98,10 @@ public class MenuProdutoTexto extends MenuEspecificoTexto {
     }
 
     public void listarTodos() {
-        System.out.println("Lista de Produtos");
+    	System.out.println();
+    	System.out.println(" ===================== ");
+        System.out.println(" | Lista de Produtos | ");
+        System.out.println(" ===================== ");
         System.out.println();
 
         imprimirProdutos();
