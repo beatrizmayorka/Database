@@ -120,7 +120,7 @@ public class PessoaDao implements IDao<Pessoa> {
 			stmt = conn.prepareStatement(SQL);
 	    	stmt.setString(1, pessoa.getNome()); // insira na primeira ? o nome da pessoa
 	    	stmt.setInt(2, pessoa.getIdade()); // insira na segunda ? a idade da pessoa
-	    	// insira na última ? o id da pessoa
+	    	// insira na Ãºltima ? o id da pessoa
 	    	stmt.setInt(3, pessoa.getId());
 	    	
 	        stmt.executeUpdate(); // executa o UPDATE			
