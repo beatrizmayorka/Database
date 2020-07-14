@@ -53,9 +53,9 @@ public class ColaboradorDao implements IDao<Colaborador> {
 	        rs = stmt.executeQuery(SQL); 
 	        
 	        while (rs.next()) {
-	        	Colaborador f = getColaboradorFromRs(rs);
+	        	Colaborador c = getColaboradorFromRs(rs);
 	        	
-	        	Colaboradores.add(f);
+	        	colaboradores.add(c);
 	        }
 			
 		} catch (SQLException e) {
