@@ -1,6 +1,6 @@
 package exemplo;
 
-import mercado.ui.MenuPrincipalTexto;
+import exemplo.ui.MenuPrincipalTexto;
 
 public class Principal {
 	
