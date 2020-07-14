@@ -32,18 +32,21 @@ public class MenuColaboradorTexto extends MenuEspecificoTexto{
 
         System.out.print(" --> Informe o nome do colaborador: ");
         String nome = entrada.nextLine();
-
+        
         System.out.print(" --> Informe o produto: ");
-        String pedidos = entrada.nextLine();
         entrada.nextLine();
 
         c.setNome(nome);
+       
 
         return c;
     }
 
     public void adicionar() {
-        System.out.println("Adicionar Colaborador");
+    	System.out.println();
+    	System.out.println(" ========================= ");
+        System.out.println(" | Adicionar Colaborador | ");
+        System.out.println(" ========================= ");
         System.out.println();
 
         Colaborador novoColaborador = obterDadosColaborador(null);
@@ -52,7 +55,10 @@ public class MenuColaboradorTexto extends MenuEspecificoTexto{
     }
 
     public void editar() {
-        System.out.println("Editar Colaborador");
+    	System.out.println();
+    	System.out.println(" ====================== ");
+        System.out.println(" | Editar Colaborador | ");
+        System.out.println(" ====================== ");
         System.out.println();
 
         imprimirColaborador();
@@ -68,7 +74,9 @@ public class MenuColaboradorTexto extends MenuEspecificoTexto{
     }
 
     public void excluir() {
-        System.out.println("Excluir Colaborador");
+    	System.out.println(" ======================= ");
+        System.out.println(" | Excluir Colaborador | ");
+        System.out.println(" ======================= ");
         System.out.println();
 
         imprimirColaborador();
@@ -79,7 +87,10 @@ public class MenuColaboradorTexto extends MenuEspecificoTexto{
     }
 
     public void listarTodos() {
-        System.out.println("Lista de Colaboradores");
+    	System.out.println();
+    	System.out.println(" ========================== ");
+        System.out.println(" | Lista de Colaboradores | ");
+        System.out.println(" ========================== ");
         System.out.println();
 
         imprimirColaborador();
@@ -90,7 +101,7 @@ public class MenuColaboradorTexto extends MenuEspecificoTexto{
         System.out.println("id\tNome\tPedidos");
 
         for (Colaborador c : colaboradores) {
-            System.out.println(f.getId() + "\t" + f.getNome() + "\t" + f.getPedidos());
+            System.out.println(c.getId() + "\t" + c.getNome() + "\t" + c.getPedidos());
         }
     }
 }
