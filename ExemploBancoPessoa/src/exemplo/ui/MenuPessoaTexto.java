@@ -14,7 +14,7 @@ public class MenuPessoaTexto extends MenuEspecificoTexto {
     }
 
     private int obterIdPessoa() {
-        System.out.print("Escolha o id da pessoa: ");
+        System.out.print(" --> Escolha o id da pessoa: ");
         int id = entrada.nextInt();
         entrada.nextLine();
 
@@ -30,10 +30,10 @@ public class MenuPessoaTexto extends MenuEspecificoTexto {
             p = pessoa;
         }
 
-        System.out.print("Digite o nome da pessoa: ");
+        System.out.print(" --> Informe o nome da pessoa: ");
         String nome = entrada.nextLine();
 
-        System.out.print("Digite a idade da pessoa: ");
+        System.out.print(" --> Informe a idade da pessoa: ");
         int idade = entrada.nextInt();
         entrada.nextLine();
 
@@ -43,9 +43,11 @@ public class MenuPessoaTexto extends MenuEspecificoTexto {
         return p;
     }
 
-    @Override
     public void adicionar() {
-        System.out.println("Adicionar Pessoa");
+        System.out.println();
+        System.out.println(" ==================== ");
+        System.out.println(" | Adicionar Pessoa | ");
+        System.out.println(" ==================== ");
         System.out.println();
 
         // obter dados da pessoa
@@ -55,9 +57,11 @@ public class MenuPessoaTexto extends MenuEspecificoTexto {
         dao.insert(novaPessoa);
     }
 
-    @Override
     public void editar() {
-        System.out.println("Editar Pessoa");
+        System.out.println();
+        System.out.println(" ================= ");
+        System.out.println(" | Editar Pessoa | ");
+        System.out.println(" ================= ");
         System.out.println();
 
         // listar as pessoas
@@ -76,9 +80,11 @@ public class MenuPessoaTexto extends MenuEspecificoTexto {
         dao.update(novaPessoa);
     }
 
-    @Override
     public void excluir() {
-        System.out.println("Excluir Pessoa");
+        System.out.println();
+        System.out.println(" ================== ");
+        System.out.println(" | Excluir Pessoa | ");
+        System.out.println(" ================== ");
         System.out.println();
 
         // listar as pessoas
@@ -90,9 +96,11 @@ public class MenuPessoaTexto extends MenuEspecificoTexto {
         dao.delete(id);
     }
 
-    @Override
     public void listarTodos() {
-        System.out.println("Lista de Pessoas");
+        System.out.println();
+    	System.out.println(" ==================== ");
+        System.out.println(" | Lista de Pessoas | ");
+        System.out.println(" ==================== ");
         System.out.println();
 
         imprimirPessoas();
