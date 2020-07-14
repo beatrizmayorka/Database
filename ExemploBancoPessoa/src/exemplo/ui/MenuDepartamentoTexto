@@ -1,0 +1,106 @@
+import exemplo.dao.DepartamentoDao;
+import exemplo.modelo.Departamento;
+
+import java.util.List;
+	
+public class MenuDepartamentoTexto extends MenuEspecificoTexto{
+	    private DepartamentoDao dao;
+
+	    public MenuDepartamentoTexto() {
+	        super();
+	        dao = new DepartamentoDao();
+	    }
+
+	    private int obterIdDepartamento() {
+	        System.out.print(" --> Escolha o id do setor: ");
+	        int id = entrada.nextInt();
+	        entrada.nextLine();
+
+	        return id;
+	    }
+
+	    private Departamento obterDadosDepartamento(Departamento departamento) {
+	    	Departamento d;
+
+	        if (departamento == null) {
+	            d = new Departamento();
+	        } else {
+	            d = departamento;
+	        }
+
+	        System.out.print(" --> Informe o departamento: ");
+	        String nome = entrada.nextLine();
+
+	        System.out.print(" --> Informe o funcionario do departamento: ");
+	        entrada.nextLine();
+
+	        d.setNome(nome);
+
+
+	        return d;
+	    }
+
+	    public void adicionar() {
+	    	  System.out.println();
+	    	  System.out.println(" ========================== ");
+	        System.out.println(" | Adicionar Departamento | ");
+	        System.out.println(" ========================== ");
+	        System.out.println();
+
+	        Departamento novoDepartamento = obterDadosDepartamento(null);
+
+	        dao.insert(novoDepartamento);
+	    }
+
+	    public void editar() {
+	    	  System.out.println();
+	    	  System.out.println(" ======================= ");
+	        System.out.println(" | Editar Departamento | ");
+	        System.out.println(" ======================= ");
+	        System.out.println();
+
+	        imprimirDepartamentos();
+
+	        int id = obterIdDepartamento();
+
+	        Departamento departamentoAModificar = dao.getById(id);
+
+	        Departamento novoDepartamento = obterDadosDepartamento(departamentoAModificar);
+
+	        novoDepartamento.setId(departamentoAModificar.getId());
+	        dao.update(novoDepartamento);
+	    }
+
+	    public void excluir() {
+	    	  System.out.println();
+	    	  System.out.println(" ======================== ");
+	        System.out.println(" | Excluir Departamento | ");
+	        System.out.println(" ======================== ");
+	        System.out.println();
+	        
+	        imprimirDepartamentos();
+	        int id = obterIdDepartamento();
+
+
+	        dao.delete(id);
+	    }
+
+	    public void listarTodos() {
+	    	  System.out.println();
+	    	  System.out.println(" ========================= ");
+	        System.out.println(" | Lista de Departamento | ");
+	        System.out.println(" ========================= ");
+	        System.out.println();
+
+	        imprimirDepartamentos();
+	    }
+
+	    private void imprimirDepartamentos() {
+	        List<Departamento> departamentos = dao.getAll();
+	        System.out.println("id\tNome\tFuncionarios");
+
+	        for (Departamento d : departamentos) {
+	            System.out.println(d.getId() + "\t" + d.getNome() + "\t" + d.getFuncionarios());
+	        }
+	    }
+	}
