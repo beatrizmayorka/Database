@@ -21,7 +21,7 @@ public class DepartamentoDao implements IDao<Departamento> {
 		}
 	}
 	
-	// Cria a tabela se não existir
+	// Cria a tabela se nÃ£o existir
 	private void createTable() throws SQLException {
 		final String sqlCreate = "IF NOT EXISTS (" 
 				+ "SELECT * FROM sys.tables t JOIN sys.schemas s ON " 
@@ -146,7 +146,7 @@ public class DepartamentoDao implements IDao<Departamento> {
 			String SQL = "UPDATE Departamento SET nome = ? WHERE id=?";
 			stmt = conn.prepareStatement(SQL);
 	    	stmt.setString(1, departamento.getNome()); // insira na primeira ? o nome da pessoa
-	    	// insira na última ? o id da pessoa
+	    	// insira na Ãºltima ? o id da pessoa
 	    	stmt.setInt(2, departamento.getId());
 	    	
 	        stmt.executeUpdate(); // executa o UPDATE			
